@@ -11,6 +11,7 @@ class HomeScene extends Component {
         <button onClick={this.goToLogin}>
           Go to Login
         </button>
+        <h1>Home Scene</h1>
       </div>
     );
   }

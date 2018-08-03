@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 
 class LoginScene extends Component {
-
-
-  goToHome = () => {
-    this.props.setLoginState(false);
+  constructor(props) {
+    super(props);
+    this.state = {
+      accountErrMsg: '',
+      passwordErrMsg: '',
+      account: '',
+      password: ''
+    };
   }
 
   render() {
+    console.log(this.props.login);
     return (
       <div>
-        <button onClick={this.goToHome}>
+        <input />
+        <input />
+        <button onClick={() => this.props.login(true)}>
           Go to Home
         </button>
+        <h1>Login Scene</h1>
       </div>
     );
   }
