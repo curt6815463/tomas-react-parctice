@@ -17,7 +17,7 @@ class LoginScene extends Component {
         <input />
         <input />
         <button onClick={() => this.props.login(true)}>
-          Go to Home
+          登入
         </button>
         <h1>Login Scene</h1>
       </div>

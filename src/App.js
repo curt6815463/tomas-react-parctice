@@ -7,7 +7,7 @@ class App extends Component {
     super(props)
     this.state = {
       auth: {
-        isLogin: true,
+        isLogin: false,
       },
       routes: {
         currentPage: 'Home'
