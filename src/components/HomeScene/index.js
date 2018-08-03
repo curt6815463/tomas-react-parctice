@@ -5,7 +5,7 @@ class HomeScene extends Component {
     return (
       <div>
         <button onclick="activateLasers()">
-          button
+          Go to Login
         </button>
       </div>
     );
