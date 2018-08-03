@@ -12,7 +12,6 @@ class LoginScene extends Component {
   }
 
   render() {
-    console.log(this.props.login);
     return (
       <div>
         <input />

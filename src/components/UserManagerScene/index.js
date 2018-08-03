@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const LoginScene = ({login}) =>
+const UserManager = ({changePage}) =>
   <div>
-    <button onClick={login}>
+    <button onClick={() => changePage('Home')}>
       Go to Home
     </button>
-    <h1>Login Scene</h1>
+    <h1>User Manager Scene</h1>
   </div>
 
-export default LoginScene;
+export default UserManager;

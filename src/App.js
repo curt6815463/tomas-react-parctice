@@ -15,14 +15,25 @@ class App extends Component {
     };
   }
 
-  setLoginState = (isLogin) => {
+  setLoginState = (isLogin) =>
     this.setState({auth: {isLogin}});
-  }
+
+  changeCurrentPage = (currentPage) =>
+    this.setState({routes: {currentPage}});
+
+  MainScene = () =>
+    <MainScene
+      currentPage={this.state.routes.currentPage}
+      changePage={this.changeCurrentPage}
+      logout={() => this.setLoginState(false)} />
+  
+  LoginScene = () =>
+    <LoginScene login={this.setLoginState}/>
 
   render() {
     return this.state.auth.isLogin
-      ? <MainScene />
-      : <LoginScene login={this.setLoginState}/>
+      ? this.MainScene()
+      : this.LoginScene();
   }
 }
 
