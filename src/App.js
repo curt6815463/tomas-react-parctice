@@ -13,8 +13,7 @@ class App extends Component {
   }
 
   setLoginState = (bool) => {
-    console.log(bool)
-    this.setState({isLogin: bool})
+    this.setState({isLogin: bool});
   }
 
 
@@ -23,7 +22,6 @@ class App extends Component {
     this.state.isLogin ?
       button = <LoginScene setLoginState={this.setLoginState} /> :
       button = <HomeScene setLoginState={this.setLoginState} />
-
     return (
       <div className="App">
         {button}

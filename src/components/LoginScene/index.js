@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 class LoginScene extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
+
 
   goToHome = () => {
     this.props.setLoginState(false);
