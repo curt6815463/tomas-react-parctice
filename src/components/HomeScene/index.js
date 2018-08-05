@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HomeScene extends Component {
-
-  goToLogin = () => {
-    this.props.setLoginState(true);
-  }
-  render() {
-    return (
-      <div>
-        <button onClick={this.goToLogin}>
-          Go to Login
-        </button>
-      </div>
-    );
-  }
-}
+const HomeScene = ({logout, changePage}) =>
+  <div>
+    <button onClick={logout}>
+      登出
+    </button>
+    <button onClick={() => changePage('userManager')}>
+      Go to UserManager
+    </button>
+    <h1>Home Scene</h1>
+  </div>
 
 export default HomeScene;

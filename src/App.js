@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
-
-import HomeScene from './components/HomeScene';
 import LoginScene from './components/LoginScene';
-
+import MainScene from './MainScene';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isLogin: false
+      auth: {
+        isLogin: false,
+      },
+      routes: {
+        currentPage: 'Home'
+      }
     };
   }
 
-  setLoginState = (bool) => {
-    this.setState({isLogin: bool});
-  }
+  setLoginState = (isLogin) =>
+    this.setState({auth: {isLogin}});
 
+  changeCurrentPage = (currentPage) =>
+    this.setState({routes: {currentPage}});
+
+  MainScene = () =>
+    <MainScene
+      currentPage={this.state.routes.currentPage}
+      changePage={this.changeCurrentPage}
+      logout={() => this.setLoginState(false)} />
+  
+  LoginScene = () =>
+    <LoginScene login={this.setLoginState}/>
 
   render() {
-    let button
-    this.state.isLogin ?
-      button = <LoginScene setLoginState={this.setLoginState} /> :
-      button = <HomeScene setLoginState={this.setLoginState} />
-    return (
-      <div className="App">
-        {button}
-      </div>
-    );
+    return this.state.auth.isLogin
+      ? this.MainScene()
+      : this.LoginScene();
   }
 }
 
